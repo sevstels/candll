@@ -72,7 +72,7 @@ CANDLL_API void CAN_Close(HANDLE lpHandle);
 //Add a Application Data handler for incoming data from the adapter
 //If this is not called, the application will not be able to receive data
 CANDLL_API int  CAN_AddRxHandler(HANDLE lpHandle, 
-	                             void(*pRXhandler)(char *pBuf, int length));
+                                 void(*pRXhandler)(char *pBuf, int length));
 
 //Remove Application Data handler from Rx thread
 CANDLL_API void CAN_RemoveRxHandler(HANDLE lpHandle);
@@ -80,7 +80,7 @@ CANDLL_API void CAN_RemoveRxHandler(HANDLE lpHandle);
 //Set Msg Acceptance Mask by device ID range 
 //For reset all ID, write 0. For accept all msg, write:(0,0xFFFF)
 CANDLL_API int  CAN_SetRxFilter(HANDLE lpHandle, 
-	                            short CAN_ID_From, short CAN_ID_To);
+                                short CAN_ID_From, short CAN_ID_To);
 
 //Modification Msg Acceptance Mask by add new single device ID 
 CANDLL_API int  CAN_AddRxID(HANDLE lpHandle, short CAN_DeviceID);
@@ -93,7 +93,7 @@ CANDLL_API int  CAN_SetRxMask(HANDLE lpHandle, short CAN_ID_Mask);
 //Add a Application CAN Event handler for rx events from the adapter
 //If this is not called, the application will not be able to receive data
 CANDLL_API int  CAN_AddEventHandler(HANDLE lpHandle, void(*pEVhandler)
-	                               (int ev_id, char *pBuf, int length));
+                                   (int ev_id, char *pBuf, int length));
 
 //Remove Application Data handler from Rx thread
 CANDLL_API void CAN_RemoveEventHandler(HANDLE lpHandle);
@@ -114,7 +114,7 @@ CANDLL_API void CAN_SendData(HANDLE lpHandle,
 //Read CAN MSG data from buffer  
 CANDLL_API int CAN_ReadData(HANDLE lpHandle,
                   short CAN_device_ID,
-				  unsigned char *pBuffer,
+                  unsigned char *pBuffer,
                   unsigned char  Rx_length);
                     
 //Send bytes array to device and then wait answer with timeout
@@ -128,8 +128,8 @@ CANDLL_API int CAN_ReadDevice(HANDLE lpHandle,
    
 //Then CAN data come, function set event DataAccepted													
 CANDLL_API int  CAN_RxChannelOpen(HANDLE lpHandle, 
-	                              HANDLE event_DataAccepted,
-	                              short CAN_DeviceID);
+                                  HANDLE event_DataAccepted,
+                                  short CAN_DeviceID);
 //Launch RX thread 
 CANDLL_API int  CAN_RxChannelClose(HANDLE lpHandle, short CAN_DeviceID);
 
@@ -144,7 +144,7 @@ CANDLL_API int CAN_ReturnDeviceCount(HANDLE lpHandle);
 
 //Return devices list add to ListBox
 CANDLL_API int CAN_GetDeviceListLBox(HANDLE lpHandle, 
-	                                 HANDLE lpListBox,
+                                     HANDLE lpListBox,
                                      short device_id_low, 
                                      short device_id_high,
                                      LPVOID pIDs, //CByteArray pointer
@@ -152,7 +152,7 @@ CANDLL_API int CAN_GetDeviceListLBox(HANDLE lpHandle,
 
 //Return devices list add to ComboBox
 CANDLL_API int CAN_GetDeviceListCombo(HANDLE lpHandle, 
-	                                  HANDLE lpComboBox,
+                                      HANDLE lpComboBox,
                                       short device_id_low, 
                                       short device_id_high,
                                       LPVOID pIDs, //CByteArray pointer
