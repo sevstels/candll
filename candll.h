@@ -49,7 +49,6 @@ CANDLL_API void USBCAN_SetHotPlugUSB(HANDLE hCAN, HWND hWndParent, HANDLE hAdapt
 //Possible values: 100, 125, 200, 250, 500, 1000, (no supported 0=AUTO)
 CANDLL_API int USBCAN_SetBaudrate(HANDLE hCAN, unsigned short baudrate);
 CANDLL_API int USBCAN_GetBaudrate(HANDLE hCAN);
-CANDLL_API int USBCAN_RunSyncTimer(HANDLE hCAN, int prescaler, int counter);
 
 //------------------------------------------------------------------------------
 //API Functions:
